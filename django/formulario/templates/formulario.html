@@ -100,14 +100,14 @@
           <!-- Teléfono -->
           <div class="control">
             <label for="telefono">Teléfono</label>
-            <input type="tel" name="telefono" id="telefono" pattern="[0-9]{10}" maxlength="10" id="telefono"
+            <input type="tel" name="telefono" id="telefono" maxlength="10" id="telefono"
               class="control__input entrada_valida" required>
           </div>
 
           <!-- Genero -->
           <div class="control control--row padding-top-8">
             <label>
-              Hombre <input type="radio" name="genero" value="1" required>
+              Hombre <input type="radio" name="genero" value="1">
             </label>
             <label>
               Mujer <input type="radio" name="genero" value="2">
@@ -120,7 +120,7 @@
           <!-- Ciudad -->
           <div class="control padding-top-8">
             <label for="ciudad">Ciudad</label>
-            <select name="ciudad" id="ciudada" class="control__input" required>
+            <select name="ciudad" id="ciudad" class="control__input">
               <option value="">Seleccione</option>
               <option value="1">Bucaramanga</option>
               <option value="2">Bogota</option>
@@ -133,37 +133,37 @@
           <div class="control padding-top-8">
             <p>Seleccione minimo 3 habilidades</p>
             <div>
-              <input type="checkbox" id="html" value="html">
+              <input type="checkbox" name="gustos" id="html" value="html">
               <label for="html">HTML</label>
             </div>
             <div>
-              <input type="checkbox" id="css" value="css">
+              <input type="checkbox" name="gustos" id="css" value="css">
               <label for="css">CSS</label>
             </div>
             <div>
-              <input type="checkbox" id="javascript" value="javascript">
+              <input type="checkbox" name="gustos" id="javascript" value="javascript">
               <label for="javascrit">Javascript</label>
             </div>
             <div>
-              <input type="checkbox" id="php" value="php">
+              <input type="checkbox" name="gustos" id="php" value="php">
               <label for="php">PHP</label>
             </div>
             <div>
-              <input type="checkbox" id="java" value="java">
+              <input type="checkbox" name="gustos" id="java" value="java">
               <label for="java">Java</label>
             </div>
             <div>
-              <input type="checkbox" id="sql" value="sql">
+              <input type="checkbox" name="gustos" id="sql" value="sql">
               <label for="sql">SQL</label>
             </div>
             <div>
-              <input type="checkbox" id="uml" value="uml">
+              <input type="checkbox" name="gustos" id="uml" value="uml">
               <label for="uml">UML</label>
             </div>
           </div>
 
           <div class="d-flex d-center padding-top-8">
-            <button type="submit" class="button button--blue">Validar <i class="bi bi-send"></i></button>
+            <button type="submit" class="button button--blue" id="enviar">Validar <i class="bi bi-send"></i></button>
           </div>
 
         </form>
