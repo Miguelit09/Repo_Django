@@ -1,8 +1,11 @@
 :root{
   --color-azul-oscuro: rgb(36, 14, 79);
+  --color-azul-oscuro-hover: rgb(53, 22, 113);
+  --color-azul-oscuro-active: rgb(74, 26, 170);
   --color-blanco: rgb(240, 226, 226);
   --color-amarillo: rgb(241, 241, 84);
-  --header: 100px
+  --header: 100px;
+  --height-elementos-perfil: 600px;
 }
 
 
@@ -19,6 +22,14 @@ body {
 
 header {
   background-color: var(--color-azul-oscuro);
+}
+
+.letra_amarilla {
+  color: var(--color-amarillo)
+}
+
+.letra_amarilla:hover {
+  text-decoration: underline;
 }
 
 .logo{
@@ -49,4 +60,87 @@ header {
   text-decoration: none;
   font-size: 28px;
   color: var(--color-blanco);
+}
+
+.seccion_perfil {
+  height: calc(100vh - var(--header));
+  display: flex;
+  align-items: center;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+
+.imagen__perfil {
+  flex: 1;
+}
+
+.informacion__perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 12px;
+  height: var(--height-elementos-perfil);
+  padding: 24px;
+  align-items: center;
+}
+
+.foto_perfil {
+  height: var(--height-elementos-perfil);
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
+.lista_datos {
+  list-style: none;
+}
+
+.lista_datos li:before {
+  content: "-"
+}
+
+.seccion_portafolio {
+  text-align: center;
+  margin: 24px auto;
+}
+
+
+.portafolio__bloque-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 36px;
+}
+
+.portafolio__tarjeta {
+  width: 240px;
+  height: auto;
+  text-decoration: none;
+  padding: 24px;
+  border: 3px solid var(--color-amarillo);
+  border-radius: 8px;
+  color: var(--color-blanco);
+  background-color: var(--color-azul-oscuro);
+}
+
+.portafolio__imagen-tarjeta {
+  max-width: 100%;
+  height: 192px;
+}
+
+.portafolio__tarjeta:hover {
+  transform: scale(1.2);
+  background-color: var(--color-azul-oscuro-hover);
+  cursor: pointer;
+}
+
+.portafolio__tarjeta:active {
+  background-color: var(--color-azul-oscuro-active);
 }

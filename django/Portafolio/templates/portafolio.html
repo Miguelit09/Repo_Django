@@ -1,9 +1,97 @@
 {% extends "layouts/app.html" %}
 
+{% load static %}
+
 {% block title %}
 <title>Portafolio</title>
 {% endblock title %}
 
 {% block content %}
-
+<section class="seccion_portafolio">
+  <h1>Portafolio</h1>
+  <div class="contenedor portafolio">
+    <div class="portafolio__bloque-tarjetas">
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/delfin.png' %}" alt="delfin" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Delfin</h3>
+            <p>Un delfín azul.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/caracol.png' %}" alt="caracol" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Caracol</h3>
+            <p>Un caracol lento.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/aguila.png' %}" alt="aguila" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Aguila</h3>
+            <p>Un águila rapaz.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/gato.png' %}" alt="gato" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Gato</h3>
+            <p>Un gato tierno.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/leon.png' %}" alt="león" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>León</h3>
+            <p>Un león prodigioso.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/lobo.png' %}" alt="lobo" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Lobo</h3>
+            <p>Un lobo silencioso.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/paloma.png' %}" alt="paloma" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Paloma</h3>
+            <p>Una paloma tranquila.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="{% url 'contacto_form' %}" class="portafolio__tarjeta">
+        <figure>
+          <img src="{% static 'images/serpiente.png' %}" alt="serpiente" class="portafolio__imagen-tarjeta">
+          <figcaption>
+            <h3>Serpiente</h3>
+            <p>Una serpiente sigilosa.</p>
+            <p class="letra_amarilla">Más información</p>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock content %}

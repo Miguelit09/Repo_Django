@@ -7,42 +7,45 @@
 {% endblock title %}
 
 {% block content %}
-<section>
-  <figure>
-    <img src={% static 'images/FotoPerfil.avif' %} alt="Foto de perfil">
-  </figure>
-  <div>
-    <h1>Acerca de mí</h1>
-    <h2>Datos personales</h2>
-    <ul>
-      <li>
-        Nombre: Miguel Pasachoa
-      </li>
-      <li>
-        Edad: 19 años
-      </li>
-      <li>
-        Género: Masculino
-      </li>
-      <li>
-        País de origen: Colombia
-      </li>
-      <li>
-        Estudios: Bachiller
-      </li>
-    </ul>
-    <h2>Datos de contacto</h2>
-    <ul>
-      <li>
-        Teléfono: 3233413967
-      </li>
-      <li>
-        Correo: miguel.p0908@gmail.com
-      </li>
-      <li>
-        Ubicación: Girón/Santander
-      </li>
-    </ul>
+<section class="seccion_perfil">
+  <div class="contenedor perfil">
+    <figure class="imagen__perfil">
+      <img src={% static 'images/FotoPerfil.avif' %} alt="Foto de perfil" class="foto_perfil">
+    </figure>
+    <div class="informacion__perfil">
+      <h1>Acerca de mí</h1>
+      <h2>Datos personales</h2>
+      <ul class="lista_datos">
+        <li>
+          Nombre: Miguel Pasachoa
+        </li>
+        <li>
+          Edad: 19 años
+        </li>
+        <li>
+          Género: Masculino
+        </li>
+        <li>
+          País de origen: Colombia
+        </li>
+        <li>
+          Estudios: Bachiller
+        </li>
+      </ul>
+      <h2>Datos de contacto</h2>
+      <ul class="lista_datos">
+        <li>
+          Teléfono: 3233413967
+        </li>
+        <li>
+          Correo: miguel.p0908@gmail.com
+        </li>
+        <li>
+          Ubicación: Girón/Santander
+        </li>
+      </ul>
+    </div>
   </div>
+
 </section>
 {% endblock content %}
