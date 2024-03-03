@@ -1,0 +1,52 @@
+:root{
+  --color-azul-oscuro: rgb(36, 14, 79);
+  --color-blanco: rgb(240, 226, 226);
+  --color-amarillo: rgb(241, 241, 84);
+  --header: 100px
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Noto Sans", sans-serif;
+}
+
+body {
+
+}
+
+header {
+  background-color: var(--color-azul-oscuro);
+}
+
+.logo{
+  height: 92px;
+  width: auto;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 12px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header);
+}
+
+.menu {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.menu__link {
+  text-decoration: none;
+  font-size: 28px;
+  color: var(--color-blanco);
+}
