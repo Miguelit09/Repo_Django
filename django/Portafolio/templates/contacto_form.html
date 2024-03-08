@@ -6,4 +6,20 @@
 <title>Contacto_Form</title>
 {% endblock title %}
 
-{% block content %}{% endblock content %}
+{% block content %}
+<section class="seccion_contacto">
+    <div class="contacto">
+        <form action="" class="contacto__form">
+            <h2>Envíame un mensaje</h2>
+            <input type="text" placeholder="Ingresa tu nombre:" class="contacto__input">
+            <input type="text" placeholder="Ingresa tu teléfono:" class="contacto__input">
+            <input type="text" placeholder="Ingresa tu email:" class="contacto__input">
+            <textarea placeholder="Mensaje..." class="contacto__input--area"></textarea>
+            <button type="submit" class="contacto_submit">Enviar ahora</button>
+        </form>
+        <figure class="contacto__picture">
+            <img src="{% static "images/formulario.png" %}" alt="imagen_formulario" class="contacto__img">
+        </figure>
+    </div>
+</section>
+{% endblock content %}

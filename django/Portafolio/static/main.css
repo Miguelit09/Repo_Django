@@ -62,7 +62,7 @@ header {
   color: var(--color-blanco);
 }
 
-.seccion_perfil {
+.seccion_perfil{
   height: calc(100vh - var(--header));
   display: flex;
   align-items: center;
@@ -106,6 +106,7 @@ header {
 }
 
 .seccion_portafolio {
+  height: calc(100vh - var(--header));
   text-align: center;
   margin: 24px auto;
 }
@@ -143,4 +144,30 @@ header {
 
 .portafolio__tarjeta:active {
   background-color: var(--color-azul-oscuro-active);
+}
+
+.seccion_contacto {
+  height: calc(100vh - var(--header));
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+
+.contacto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.contacto__input {
+  
+}
+
+.contacto__picture {
+  flex: 1;
 }
