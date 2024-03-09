@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg-black: #1e1e1e;
+  --bg-white: #fff;
+  --bg-primary: #e1af0a;
+  --max-width: 1200px;
+  --header: 80px;
+  --contact-columns: repeat(8, 1fr);
+  --contact-rows: 1fr;
+  --clip: polygon(35% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  color: var(--bg-black);
+}
+
+header {
+  background-color: var(--bg-black);
+  color: var(--gg-white);
+}
+
+.section {
+  height: calc(100vh - var(--header));
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.logo {}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header);
+}
+
+.menu {}
+
+.menu__list {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.menu__item {}
+
+.menu__link {
+  text-decoration: none;
+  color: var(--bg-white);
+  font-size: 22px;
+}
+
+.menu__link:hover {
+  color: var(--bg-primary);
+}
+
+/************************************************
+*************************************************
+            Contenido portada
+*************************************************
+*************************************************/
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - var(--header));
+}
+
+.profile__picture {
+  flex: 1;
+}
+
+.profile__img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile__text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+.profile__title {
+  font-size: 3rem;
+  /* color: var(--bg-primary); */
+}
+
+.profile__title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--bg-primary);
+  margin-top: 10px;
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item {
+  padding: 6px 0;
+}
+
+.list__item--border {
+  border-bottom: solid 1px #d7d6d1;
+}
+
+.paragraph {
+  font-size: 18px;
+}
+
+/************************************************
+*************************************************
+            Contenido portafolio
+*************************************************
+*************************************************/
+
+.portfolio {
+  width: 90%;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.portfolio__title {
+  font-size: 3rem;
+}
+
+.portfolio__title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--bg-primary);
+  margin-top: 10px;
+}
+
+.portfolio__container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio__link {
+  min-width: 200px;
+  flex: 350px;
+}
+
+.portfolio__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/************************************************
+*************************************************
+            Contenido contáctenos
+*************************************************
+*************************************************/
+
+.contact {
+  height: calc(100vh - var(--header));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact__picture {
+  flex: 1;
+}
+
+.section--contact::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background: var(--bg-primary);
+  z-index: -1;
+  clip-path: var(--clip);
+}
+
+.contact__img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+.contact__title {
+  font-size: 3rem;
+}
+
+.contact__title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--bg-primary);
+  margin-top: 10px;
+}
+
+.contact__input {
+  padding: 18px 10px;
+  font-family: var(--font);
+  width: 100%;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+.contact__input--area {
+  resize: none;
+  height: 150px;
+}
+
+.contact__cta {
+  display: block;
+  background: var(--bg-primary);
+  width: 200px;
+  color: var(--bg-white);
+  padding: 18px 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 2px 10px -4px rgba(0, 0, 0, .5);
+}

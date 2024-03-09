@@ -1,0 +1,37 @@
+{% extends "./layouts/base.html" %} 
+{% load static %}
+
+{% block title %}
+Portada
+{% endblock  %}
+
+{% block content%}
+
+<section class="section">
+  <div class="container profile">
+    <figure class="profile__picture">
+      <img src="{% static 'img/profile.png' %}" alt="Foto personal" class="profile__img">
+    </figure>
+    <div class="profile__text">
+      <h1 class="profile__title">
+        Miguel Pasachoa
+      </h1>
+      <ul class="list">
+        <li class="list__item list__item--border">
+          <p class="paragraph"><b>Celular: </b>3233413967</p>
+        </li>
+        <li class="list__item list__item--border">
+          <p class="paragraph"><b>Corre electrónico: </b>migapasachoa@soy.sena.edu.co</p>
+        </li>
+        <li class="list__item list__item--border">
+          <p class="paragraph"><b>Edad: </b>19 años</p>
+        </li>
+        <li class="list__item list__item--border">
+          <p class="paragraph"><b>Profesión: </b>Aprendiz SENA</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{%endblock %}
