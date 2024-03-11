@@ -103,6 +103,10 @@ body{
   padding-bottom: 4px;
 }
 
+.contenedor_multi_inputs {
+  padding: 12px;
+}
+
 .control--row{
   flex-direction: row;
 }
@@ -131,8 +135,10 @@ body{
 }
 
 .borde-rojo {
-  border-color: red;
+  border: 1px solid red;
+  border-radius: 4px;
 }
 .borde-verde {
-  border-color: green;
+  border: 1px solid green;
+  border-radius: 4px;
 }
