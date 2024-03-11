@@ -10,5 +10,5 @@ class Post(models.Model):
     titulo = models.CharField(max_length=50)
     cuerpo = models.TextField()
     fecha = models.DateField(default= date.today)
-    id_author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, blank=True, related_name="posts")
 
