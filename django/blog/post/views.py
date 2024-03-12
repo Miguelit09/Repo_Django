@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from .models import Post, Author
 
@@ -51,3 +51,38 @@ def consultar_post_por_autor(request, author_id):
   for post in posts_author:
     respuesta += (f"\nTítulo: {post.titulo}\nCuerpo: {post.cuerpo}")
   return HttpResponse(respuesta)
+
+def consultas(request):
+  # consultar todos los posts 
+  posts = Post.objects.all()
+
+  # consultar con un filtro
+  filtro = Post.objects.filter(titulo='uno')
+
+  # obtener un único registro
+  post = Post.objects.get(id= 12)
+
+  # obtener los 20 primeros elementos
+
+  limite = Post.objects.all()[:20]
+
+  # obtener los 5 primeros resultados partiendo del item 15
+
+  limite = Post.objects.all()[3:8]
+
+  #obtener los registros ordenados por el titulo
+
+  orden = Post.objects.all().order_by('cuerpo')[:20] #Indicando el nombre del campo, se ordenan ASC, indicando el nombre del campo con un guion antes (-cuerpo), los ordenan DESC 
+
+  # obtener los elementos que su id sea menor o igual que 20
+
+  menor = Post.objects.filter(id__lte=20)
+
+  return render(request, 'index.html', {
+    'posts': posts,
+    'filtro': filtro,
+    'post': post,
+    'limite': limite,
+    'orden': orden,
+    'menor': menor,
+  })

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h3>Listar todos los posts {{ posts|length }}</h3>
+    <ul>
+      <!-- posts, filtro y post hacen referencia a las variables del codigo de views que tienen este mismo nombre. -->
+      {% for elemento in posts %}
+      <li>{{elemento.titulo}}</li>
+      {% endfor %}
+    </ul>
+    <hr>
+    <h3>Listar todos los post que tengan "uno" en el titulo</h3>
+    <ul>
+      {% for elemento in filtro %}
+      <li>{{elemento.titulo}}</li>
+      {% endfor %}
+    </ul>
+    <h3>Consultar un único registro</h3>
+    <p>Titulo: {{ post.titulo }} -- ID: {{ post.id }} -- Fecha: {{ post.fecha }}</p>
+    <h3>Consultar registros con un límite ({{ limite|length }})</h3>
+    <ul>
+      {% for elemento in limite %}
+      <li>{{ elemento.id }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Consultar los registros con un orden de su campo cuerpo con limite ({{ orden|length }})</h3>
+    <ul>
+      {% for elemento in orden %}
+      <li>{{ elemento.cuerpo }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Consultar registros cuyo ID es menor o igual a 20</h3>
+    <ul>
+      {% for elemento in menor %}
+      <li>{{ elemento.id }}. {{ elemento.titulo }}</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+
+</html>

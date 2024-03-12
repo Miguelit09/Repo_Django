@@ -9,5 +9,6 @@ urlpatterns = [
     path("consultar/<int:consulta_id>", views.consultar, name="consultar"),
     path("actualizar/<int:consulta_id>/<str:campo>/<str:valor>", views.actualizar, name="actualizar"),
     path("eliminar/<int:consulta_id>", views.eliminar, name="eliminar"),
-    path("consultar_post_por_autor/<int:author_id>", views.consultar_post_por_autor, name="consultar_post_por_autor")
+    path("consultar_post_por_autor/<int:author_id>", views.consultar_post_por_autor, name="consultar_post_por_autor"),
+    path("consultas/",  views.consultas, name="consultas"),
 ]
