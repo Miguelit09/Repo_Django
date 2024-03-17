@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One_To_Many</title>
+</head>
+
+<body>
+  <main>
+    <h1>Registros One_To_Many</h1>
+    <h2>Si se consulta un registro, aparecerá aquí abajo</h2>
+    <ul>
+      <li>Reporter Name: {{ query.first_name }} {{ query.last_name }}</li>
+      <li>Email: {{ query.email }}</li>
+    </ul>
+    <h2>Reporter's Articles</h2>
+    <ul>
+      {% for article in articles %}
+      <li>ID Article: {{ article.id }}</li>
+      <li>Headline: {{ article.headline }}</li>
+      <li>Publication date: {{ article.pub_date }}</li>
+      <br>
+      {% endfor %}
+    </ul>
+
+    <hr>
+    <h2>Nombre de todos los reporteros registrados con sus ID:</h2>
+    <ul>
+      {% for reporter in reporters %}
+      <li>ID: {{ reporter.id }} -- Name: {{ reporter.first_name }} {{reporter.last_name}}</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+
+</html>

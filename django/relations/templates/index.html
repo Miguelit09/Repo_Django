@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relations</title>
+</head>
+
+<body>
+  <main>
+    <!-- <h2>Artículos del reportero {{ reporter.first_name }}</h2>
+    <ul>
+      {% for article in articles %}
+      <li>{{ article.headline }}</li>
+      {% endfor %}
+    </ul> -->
+    {% for publication in publications %}
+    <h2>Articulos de la publicación {{ publication.title }}</h2>
+    {% for article in publication.articletwo_set.all %}
+    <li> {{ article.headline }}</li>
+    {% endfor %}
+    {% endfor %}
+  </main>
+</body>
+
+</html>
