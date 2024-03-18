@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Many_To_Many</title>
+</head>
+
+<body>
+  <main>
+    <h1>Registros Many_To_Many</h1>
+    <h2>Si se consulta un registro, aparecerá aquí abajo</h2>
+    {% if table == "publication" %}
+    <h3>Se consultó una Publicación</h3>
+    {% elif table == "articletwo" %}
+    <h3>Se consultó un Artículo</h3>
+    {% endif %}
+    <ul>
+      {% if table == "publication" %}
+      <li>ID: {{ query.id }}</li>
+      <li>Title: {{ query.title }}</li>
+    </ul>
+    <h4>Sus artículos son:</h4>
+    <ol>
+      {% for article in query.articletwo_set.all %}
+      <li>{{ article.headline }}</li>
+      {% endfor %}
+    </ol>
+      {% elif table == "articletwo"  %}
+      <li>ID: {{ query.id }}</li>
+      <li>Headline: {{ query.headline }}</li>
+    </ul>
+    <h4>Este artículo está en las siguientes publicaciones:</h4>
+    <ol>
+      {% for publication in query.publications.all %}
+      <li>{{ publication.title }}</li>
+      {% endfor %}
+    </ol>
+      {% endif %}
+    <hr>
+    {% for publication in publications %}
+    <h2>Articulos de la publicación {{ publication.title }}</h2>
+    {% for article in publication.articletwo_set.all %}
+    <li> {{ article.headline }}</li>
+    {% endfor %}
+    {% endfor %}
+  </main>
+</body>
+
+</html>
