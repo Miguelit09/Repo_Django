@@ -1,0 +1,24 @@
+<section class="seccion_formulario">
+  <article class="card">
+    <form action="{% url 'save_salario' %}" method="post">
+      {% csrf_token %}
+      <div class="control">
+        <label for="valor_bruto_año">Valor bruto por año</label>
+        <input type="text" id="valor_bruto_año" name="valor_bruto_año" required>
+      </div>
+      <div>
+        <label for="extra_junio">Pago extra de junio</label>
+        <input type="checkbox" id="extra_junio" name="extra_junio" value="True">
+      </div>
+      <div>
+        <label for="extra_diciembre">Pago extra de diciembre</label>
+        <input type="checkbox" id="extra_diciembre" name="extra_diciembre" value="True">
+      </div>
+      <div>
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </article>
+</section>
+
+

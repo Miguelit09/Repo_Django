@@ -1,0 +1,28 @@
+<section class="seccion_formulario">
+  <article class="card">
+    <form action="{% url 'save_puesto' %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="">Nombre del puesto</label>
+        <input type="text" id="nombre_puesto" name="nombre_puesto" required>
+      </div>
+      <div class="control">
+        <label for="descripcion">Descripción del puesto</label>
+        <textarea id="descripcion" name="descripcion"></textarea>
+        <!-- <input type="text" id="descripcion" name="descripcion" required> -->
+      </div>
+      <div>
+        <label for="salario_id">Salario del puesto</label>
+        <select id="salario_id" name="salario_id">
+          {% for salario in salarios %}
+          <option value={{ salario.id }}>{{ salario.valor_bruto_año }}</option>
+          {% endfor %}
+          <select>
+      </div>
+      <div>
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </article>
+</section>
+

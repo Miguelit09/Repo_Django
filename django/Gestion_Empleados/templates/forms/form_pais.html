@@ -1,0 +1,15 @@
+<section class="seccion_formulario">
+  <article class="card">
+    <form action="{% url 'save_pais' %}" method="post">
+      {% csrf_token %}
+      <div class="control">
+        <label for="nombre_pais">Nombre País</label>
+        <input type="text" id="nombre_pais" name="nombre_pais" required>
+      </div>
+      <div>
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </article>
+</section>
+

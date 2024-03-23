@@ -1,0 +1,42 @@
+<section class="seccion_formulario">
+  <article class="card">
+    <form action="{% url 'save_empleado' %}" method="post">
+      {% csrf_token %}
+      <div class="control">
+        <label for="nombre_empleado">Nombre empleado</label>
+        <input type="text" id="nombre_empleado" name="nombre_empleado" value={{}} required>
+      </div>
+      <div class="control">
+        <label for="documento">Documento</label>
+        <input type="text" id="documento" name="documento" required>
+      </div>
+      <div class="control">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="control">
+        <label for="direccion_empleado">Dirección empleado</label>
+        <input type="text" id="direccion_empleado" name="direccion_empleado" required>
+      </div>
+      <div>
+        <label for="fabrica_id">Fábrica de trabajo</label>
+        <select id="fabrica_id" name="fabrica_id">
+          {% for fabrica in fabricas %}
+          <option value={{ fabrica.id }}>{{ fabrica.nombre_fabrica }}</option>
+          {% endfor %}
+          <select>
+      </div>
+      <div>
+        <label for="puesto_id">Puesto de trabajo</label>
+        <select id="puesto_id" name="puesto_id">
+          {% for puesto in puestos %}
+          <option value={{ puesto.id }}>{{ puesto.nombre_puesto }}</option>
+          {% endfor %}
+          <select>
+      </div>
+      <div>
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </article>
+</section>

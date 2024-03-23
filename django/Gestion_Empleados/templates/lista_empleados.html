@@ -1,0 +1,18 @@
+{% extends "layouts/app.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>Lista empleados</title>
+{% endblock title %}
+
+
+{% block lista %}
+<h1>Empleados registrados:</h1>
+<ul>
+  {% for empleado in empleados %}
+  <li>ID: {{ empleado.id }} --- Nombre: {{ empleado.nombre_empleado }} --- <a href="#">Editar</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock lista %}
