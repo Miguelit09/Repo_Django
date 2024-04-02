@@ -11,7 +11,7 @@
 <h1>Empleados registrados:</h1>
 <ul>
   {% for empleado in empleados %}
-  <li>ID: {{ empleado.id }} --- Nombre: {{ empleado.nombre_empleado }} --- <a href="#">Editar</a></li>
+  <li>ID: {{ empleado.id }} --- Nombre: {{ empleado.nombre_empleado }} --- <a href="{% url "formulario_editar_empleado" empleado.id %}">Editar</a> --- <a href="{% url "eliminar_empleado" empleado.id %}">Eliminar</a></li>
   {% endfor %}
 </ul>
 

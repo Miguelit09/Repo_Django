@@ -6,6 +6,8 @@ from .models import Pais, Poblacion, Fabrica, Salario, Puesto, Empleado
 def index(request):
     return render(request, 'index.html', {})
 
+
+# PAIS 
 def registrar_pais(request):
     return render(request, 'registrar_pais.html', {})
 
@@ -14,6 +16,7 @@ def save_pais(request):
     new_pais = Pais.objects.create(nombre_pais=nombre_pais)
     return HttpResponse(f"Se registró el país {new_pais.nombre_pais}.")
 
+# POBLACIÓN
 def registrar_poblacion(request):
     paises = Pais.objects.all()
     return render(request, 'registrar_poblacion.html', {
@@ -27,6 +30,8 @@ def save_poblacion(request):
     new_poblacion = Poblacion.objects.create(nombre_poblacion=nombre_poblacion, pais=pais)
     return HttpResponse(f"Se registró la población {new_poblacion.nombre_poblacion} localizada en {pais.nombre_pais}")
 
+
+# FABRICA
 def registrar_fabrica(request):
     poblaciones = Poblacion.objects.all()
     return render(request, 'registrar_fabrica.html', {
@@ -42,6 +47,7 @@ def save_fabrica(request):
     new_fabrica = Fabrica.objects.create(nombre_fabrica=nombre_fabrica, direccion_fabrica=direccion_fabrica, codigo_postal=codigo_postal, poblacion = poblacion)
     return HttpResponse(f"Se registró la fabrica {new_fabrica.nombre_fabrica} localizada en la población {poblacion.nombre_poblacion}")
 
+# SALARIO
 def registrar_salario(request):
     return render(request, 'registrar_salario.html', {})
 
@@ -58,6 +64,10 @@ def save_salario(request):
     new_salario = Salario.objects.create(valor_bruto_año=valor_bruto_año, extra_junio=extra_junio, extra_diciembre=extra_diciembre)
     return HttpResponse(f"Se registró el salario")
 
+# PUESTO
+
+def tabla_puesto(request):
+    return render(request, 'tabla_puesto.html', {})
 
 def registrar_puesto(request):
     salarios = Salario.objects.all()
@@ -73,8 +83,39 @@ def save_puesto(request):
     new_puesto = Puesto.objects.create(nombre_puesto=nombre_puesto, descripcion=descripcion, salario=salario)
     return HttpResponse(f"Se registró el puesto {new_puesto.nombre_puesto}.")
 
+def listar_puestos(request):
+    puestos = Puesto.objects.all()
+    return render(request, 'lista_puestos.html', {
+        'puestos': puestos
+    })
+
+def formulario_editar_puesto(request, id):
+    puesto = Puesto.objects.get(id=id)
+    salarios = Salario.objects.all()
+    return render(request, 'editar_puesto.html', {
+        'puesto': puesto,
+        'salarios': salarios,
+    })
 
 
+def editar_puesto(request):
+    puesto = Puesto.objects.get(id=request.POST['id'])
+    puesto.nombre_puesto = request.POST['nombre_puesto']
+    puesto.descripcion = request.POST['descripcion']
+    puesto.salario = Salario.objects.get(id=request.POST['salario_id'])
+
+    puesto.save()
+    return HttpResponse(f"Puesto con ID {puesto.id} actualizado.")
+
+def eliminar_puesto(request, id):
+    puesto = Puesto.objects.get(id=id)
+    puesto.delete()
+    return HttpResponse(f"Puesto con ID {id} eliminado.")
+
+
+
+
+# EMPLEADO
 def tabla_empleado(request):
     return render(request, 'tabla_empleado.html', {})
 
@@ -104,5 +145,30 @@ def listar_empleados(request):
         'empleados': empleados
     })
 
-# def editar_empleado(request):
-    
+def formulario_editar_empleado(request, id):
+    empleado = Empleado.objects.get(id=id)
+    fabricas = Fabrica.objects.all()
+    puestos = Puesto.objects.all()
+    return render(request, 'editar_empleado.html', {
+        'empleado': empleado,
+        'fabricas': fabricas,
+        'puestos': puestos,
+    })
+
+
+def editar_empleado(request):
+    empleado = Empleado.objects.get(id=request.POST['id'])
+    empleado.nombre_empleado = request.POST['nombre_empleado']
+    empleado.documento = request.POST['documento']
+    empleado.email = request.POST['email']
+    empleado.direccion_empleado = request.POST['direccion_empleado']
+    empleado.fabrica = Fabrica.objects.get(id=request.POST['fabrica_id'])
+    empleado.puesto = Puesto.objects.get(id=request.POST['puesto_id'])
+
+    empleado.save()
+    return HttpResponse(f"Empleado con ID {empleado.id} actualizado.")
+
+def eliminar_empleado(request, id):
+    empleado = Empleado.objects.get(id=id)
+    empleado.delete()
+    return HttpResponse(f"Empleado con ID {id} eliminado.")

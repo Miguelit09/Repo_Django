@@ -1,0 +1,18 @@
+{% extends "layouts/app.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>Lista Puestos</title>
+{% endblock title %}
+
+
+{% block lista %}
+<h1>Puestos registrados:</h1>
+<ul>
+    {% for puesto in puestos %}
+    <li>ID: {{ puesto.id }} --- Nombre: {{ puesto.nombre_puesto }} --- <a href="{% url "formulario_editar_puesto" puesto.id %}">Editar</a> --- <a href="{% url "eliminar_puesto" puesto.id %}">Eliminar</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock lista %}
